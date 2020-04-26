@@ -1,0 +1,137 @@
+.bot-outer-box {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  min-height: 10vh;
+  min-width: 16vw;
+  z-index: 100000000;
+
+  top: 60vh;
+  right: 0vw;
+
+  background-color: rgba(31, 31, 31, 0.171);
+  color: antiquewhite;
+}
+
+.bot-chat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: start;
+  min-width: 18vw;
+  min-height: 12vh;
+}
+
+.bot-chat-bot,
+.bot-chat-user,
+.bot-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 0.15em;
+  padding-left: 0.5em;
+
+  width: fit-content;
+  min-height: 2vh;
+
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  border: solid;
+  border-color: black;
+  border-width: medium;
+}
+
+.bot-chat-bot {
+  align-self: flex-end;
+  padding-right: 0.5em;
+  align-items: flex-end;
+
+  border-top-left-radius: 20em;
+  border-bottom-left-radius: 20em;
+
+  background-color: rgb(0, 27, 7);
+  color: rgb(123, 255, 0);
+}
+
+.bot-chat-user {
+  align-self: flex-start;
+  padding-left: 0.3em;
+  align-items: flex-start;
+
+  border-top-right-radius: 20em;
+  border-bottom-right-radius: 20em;
+
+  background-color: rgb(1, 4, 7);
+  color: #08f7fe;
+}
+
+.bot-input {
+  align-self: flex-end;
+  padding-left: 0.3em;
+  align-items: flex-start;
+
+  border: thin solid white;
+  border-top-right-radius: 20em;
+  border-bottom-right-radius: 20em;
+
+  background-color: rgb(1, 4, 7);
+  color: #08f7fe;
+}
+
+.bot-input:hover,
+.bot-input:focus,
+.bot-input:active {
+  outline: 0;
+}
+
+.bot-input-box {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 4;
+
+  align-items: center;
+  align-self: flex-start;
+  justify-self: flex-end;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.bot-image {
+  height: 10em;
+  width: 10em;
+}
+
+.bot-image:hover,
+.bot-image:active {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: rotate(1deg);
+  }
+
+  20%,
+  80% {
+    transform: rotate(-2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+}
