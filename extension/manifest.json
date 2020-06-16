@@ -11,13 +11,20 @@
     {
       "matches": ["<all_urls>"],
       "run_at": "document_start",
-      "js": ["scripts/front/accessFeatures.js", "scripts/content.js"],
+      "js": [
+        "scripts/front/std.js",
+        "scripts/front/handleFeatures.js",
+        "scripts/front/chatSystem.js",
+        "scripts/front/draggable.js",
+        "scripts/front/content.js",
+        "scripts/front/features/codeforces.js"
+      ],
       "css": ["/css/botBox.css"]
     }
   ],
   "permissions": ["activeTab", "tabs", "storage"],
   "background": {
-    "scripts": ["scripts/background.js"],
+    "scripts": ["scripts/background/background.js"],
     "persistent": false
   },
   "web_accessible_resources": ["media/*"]
