@@ -20,4 +20,4 @@ Mainly it will involve following steps:-
 
 6. You can always use other resources like from `chatSystem.js, std.js` present in extension or other feature api's by sending xmlHttpRequests to that feature.
 
-**NOTE:** As an example please see the codeforces feature.
+**NOTE:** As an example please see the codeforces feature [link here](./features/README.MD)

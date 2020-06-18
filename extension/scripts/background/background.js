@@ -15,6 +15,10 @@ chrome.storage.local.set({
 
 var tabsCallCount = 0;
 
+chrome.runtime.onMessage.addListener (function (req, sender, sendResponse) {
+  sendResponse({message : sender.url});
+})
+
 function toggleButton() {
   chrome.storage.local.get("buttonState", function (result) {
     chrome.storage.local.set({ buttonState: !result["buttonState"] });
