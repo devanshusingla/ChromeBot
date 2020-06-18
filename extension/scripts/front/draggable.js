@@ -63,6 +63,7 @@ function make_draggable(dragitem, draghandle) {
   dragHandle = draghandle;
   var body = document.getElementsByTagName("body")[0];
 
+  if (!body) return;
   dragHandle.addEventListener("touchstart", dragStart, false);
   body.addEventListener("touchend", dragEnd, false);
   body.addEventListener("touchmove", drag, false);

@@ -17,14 +17,19 @@
         "scripts/front/chatSystem.js",
         "scripts/front/draggable.js",
         "scripts/front/content.js",
-        "scripts/front/features/codeforces.js"
+        "scripts/front/features/codeforces.js",
+        "scripts/front/features/contestSchedular.js"
       ],
       "css": ["/css/botBox.css"]
     }
   ],
-  "permissions": ["activeTab", "tabs", "storage"],
+  "permissions": ["activeTab", "tabs", "storage", "alarms"],
   "background": {
-    "scripts": ["scripts/background/background.js"],
+    "scripts": [
+      "scripts/background/std.js",
+      "scripts/background/background.js",
+      "scripts/background/features/contestSchedular.js"
+    ],
     "persistent": false
   },
   "web_accessible_resources": ["media/*"]

@@ -6,5 +6,7 @@ function handleFeature(res) {
     });
   } else if (res.featureName === "codeforces") {
     codeforces(res);
+  } else if (res.featureName === "contestSchedular") {
+    contestSchedular(res);
   }
 }

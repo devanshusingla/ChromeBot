@@ -14,6 +14,13 @@ function detectCommand(req, res, next) {
       featureType: "interactive",
       featureName: "codeforces",
     });
+  } else if (userInput === "contests") {
+    res.set("Content-Type", "application/json");
+    res.json({
+      type: "feature",
+      featureType: "noArg",
+      featureName: "contestSchedular",
+    });
   } else next();
 }
 
