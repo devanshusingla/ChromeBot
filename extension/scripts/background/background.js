@@ -15,9 +15,9 @@ chrome.storage.local.set({
 
 var tabsCallCount = 0;
 
-chrome.runtime.onMessage.addListener (function (req, sender, sendResponse) {
-  sendResponse({message : sender.url});
-})
+chrome.runtime.onMessage.addListener(function (req, sender, sendResponse) {
+  sendResponse({ message: sender.url });
+});
 
 function toggleButton() {
   chrome.storage.local.get("buttonState", function (result) {
@@ -44,15 +44,27 @@ function sendMessage() {
       }
       var startBot = result["buttonState"];
       var todo = startBot ? "launchBot" : "destroyBot";
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        if (tabs[0]) {
-          chrome.storage.local.set({ activeTabId: tabs[0].id });
-          tabsCallCount--;
-          chrome.tabs.sendMessage(tabs[0].id, {
-            todo: todo,
-          });
-        }
-      });
+
+      function activateBot() {
+        chrome.tabs.query(
+          { active: true, currentWindow: true },
+          function (tabs) {
+            if (chrome.runtime.lastError) {
+              console.log("background query error");
+              window.setTimeout(() => activateBot(), 100);
+            }
+            if (tabs && tabs[0]) {
+              chrome.storage.local.set({ activeTabId: tabs[0].id });
+              tabsCallCount--;
+              chrome.tabs.sendMessage(tabs[0].id, {
+                todo: todo,
+              });
+            }
+          }
+        );
+      }
+
+      activateBot();
     });
   } else {
     tabsCallCount--;
